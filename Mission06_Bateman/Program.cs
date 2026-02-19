@@ -6,8 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Use SQLite DB in project directory (not dependent on working directory)
+var conn = builder.Configuration.GetConnectionString("MovieConnection");
+var dbFileName = string.IsNullOrEmpty(conn) ? "JoelHiltonMovieCollection.sqlite" : conn.Replace("Data Source=", "").Trim();
+var dbPath = Path.Combine(builder.Environment.ContentRootPath, dbFileName);
 builder.Services.AddDbContext<MovieCollectionContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("MovieConnection")));
+    options.UseSqlite($"Data Source={dbPath}"));
 
 var app = builder.Build();
 

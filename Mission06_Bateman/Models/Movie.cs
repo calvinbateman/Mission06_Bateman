@@ -2,45 +2,33 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Mission06_Bateman.Models;
 
-public enum Rating
-{
-    G,
-    PG,
-    PG13,
-    R
-}
-
-
 public class Movie
 {
-    public int MovieId { get; set; }  // Primary key 
+    public int MovieId { get; set; }
 
-    [Required]
+    /// <summary>Maps to DB; not shown on form. Controller sets default for new records.</summary>
     public int CategoryId { get; set; }
 
-    [Required]
-    public string? Title { get; set; } = string.Empty;
+    [Required(ErrorMessage = "Title is required.")]
+    public string? Title { get; set; }
 
-    [Required]
-    [CurrentYear] // This has been abstracted so that it can check against the current year. Look in /Models/CuurentYearAttribute.cs to find logic
+    [Required(ErrorMessage = "Year is required.")]
+    [Range(1888, int.MaxValue, ErrorMessage = "Year must be 1888 or later.")]
     public int Year { get; set; }
 
-    [Required]
-    public string? Director { get; set; } = string.Empty;
+    public string? Director { get; set; }
 
-    [Required]
-    public Rating Rating { get; set; }
+    /// <summary>DB stores TEXT (e.g. PG-13, TV-14, NR, UR).</summary>
+    public string? Rating { get; set; }
 
-    [Required]
+    [Required(ErrorMessage = "Please choose Yes or No for Edited.")]
     public bool? Edited { get; set; }
 
-    // Not required
     public string? LentTo { get; set; }
-    
-    [Required]
+
+    [Required(ErrorMessage = "Please choose Yes or No for Copied to Plex.")]
     public bool? CopiedToPlex { get; set; }
 
-    // Not required, max 25 chars
-    [StringLength(25)]
+    [StringLength(25, ErrorMessage = "Notes cannot exceed 25 characters.")]
     public string? Notes { get; set; }
 }
