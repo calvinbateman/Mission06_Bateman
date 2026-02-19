@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mission06_Bateman")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5903f474ef756330f5fac68f18a5a3ff6e06c824")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mission06_Bateman")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mission06_Bateman")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
