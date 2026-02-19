@@ -328,4 +328,3 @@
 /Users/calvinbateman/Documents/School/413/Mission06_Bateman/Mission06_Bateman/bin/Debug/net10.0/runtimes/win-arm64/native/e_sqlite3.dll
 /Users/calvinbateman/Documents/School/413/Mission06_Bateman/Mission06_Bateman/bin/Debug/net10.0/runtimes/win-x64/native/e_sqlite3.dll
 /Users/calvinbateman/Documents/School/413/Mission06_Bateman/Mission06_Bateman/bin/Debug/net10.0/runtimes/win-x86/native/e_sqlite3.dll
-/Users/calvinbateman/Documents/School/413/Mission06_Bateman/Mission06_Bateman/obj/Debug/net10.0/Mission06_Bateman.sourcelink.json

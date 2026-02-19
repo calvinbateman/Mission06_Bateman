@@ -13,15 +13,13 @@
 
 <h1>Add a Movie</h1>
 
-<form asp-action="@(Model != null && Model.MovieId != 0 ? "Edit" : "Create")" method="post">
+<form asp-action="Create" method="post">
     <div asp-validation-summary="All" class="text-danger"></div>
-    
-    <input type="hidden" asp-for="MovieId" />
 
     <div class="mb-3">
-        <label asp-for="CategoryId" class="form-label"></label>
-        <input asp-for="CategoryId" class="form-control" />
-        <span asp-validation-for="CategoryId" class="text-danger"></span>
+        <label asp-for="Category" class="form-label"></label>
+        <input asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
